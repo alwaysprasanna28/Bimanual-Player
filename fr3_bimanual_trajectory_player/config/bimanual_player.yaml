@@ -1,0 +1,20 @@
+left_joint_names:
+  - panda1_joint1
+  - panda1_joint2
+  - panda1_joint3
+  - panda1_joint4
+  - panda1_joint5
+  - panda1_joint6
+  - panda1_joint7
+
+right_joint_names:
+  - panda2_joint1
+  - panda2_joint2
+  - panda2_joint3
+  - panda2_joint4
+  - panda2_joint5
+  - panda2_joint6
+  - panda2_joint7
+
+action_timeout: 10.0
+wait_for_result: true

@@ -1,0 +1,22 @@
+<launch>
+  <arg name="left_json" default="$(env HOME)/code_test/bimanual/trajectory/left_arm_lift 2.json"/>
+  <arg name="right_json" default="$(env HOME)/code_test/bimanual/trajectory/right_arm_lift 2.json"/>
+  <arg name="left_action" default="/left_arm_controller/follow_joint_trajectory"/>
+  <arg name="right_action" default="/right_arm_controller/follow_joint_trajectory"/>
+  <arg name="start_delay" default="1.0"/>
+  <arg name="time_scale" default="1.0"/>
+
+  <rosparam file="$(find fr3_bimanual_trajectory_player)/config/bimanual_player.yaml" command="load"/>
+
+  <node pkg="fr3_bimanual_trajectory_player"
+        type="bimanual_trajectory_player.py"
+        name="bimanual_trajectory_player"
+        output="screen">
+    <param name="left_json" value="$(arg left_json)"/>
+    <param name="right_json" value="$(arg right_json)"/>
+    <param name="left_action" value="$(arg left_action)"/>
+    <param name="right_action" value="$(arg right_action)"/>
+    <param name="start_delay" value="$(arg start_delay)"/>
+    <param name="time_scale" value="$(arg time_scale)"/>
+  </node>
+</launch>
