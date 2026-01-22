@@ -21,6 +21,17 @@ If you do not already have Franka support installed, clone and build
 roslaunch fr3_bimanual_trajectory_player play_bimanual_trajectories.launch
 ```
 
+## Single-arm usage
+Run a single JSON trajectory against one robot using the `single_trajectory_player`.
+Example:
+
+```bash
+rosrun fr3_bimanual_trajectory_player single_trajectory_player.py \
+  _trajectory_json:=/path/to/trajectory.json \
+  _action:=/arm_controller/follow_joint_trajectory \
+  _joint_names:="[panda_joint1, panda_joint2, panda_joint3, panda_joint4, panda_joint5, panda_joint6, panda_joint7]"
+```
+
 ## Parameters
 - `~left_json`, `~right_json`: JSON trajectory paths.
 - `~left_action`, `~right_action`: `FollowJointTrajectory` action names.

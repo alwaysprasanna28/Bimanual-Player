@@ -13,5 +13,6 @@ catkin_package()
 
 catkin_install_python(PROGRAMS
   scripts/bimanual_trajectory_player.py
+  scripts/single_trajectory_player.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
