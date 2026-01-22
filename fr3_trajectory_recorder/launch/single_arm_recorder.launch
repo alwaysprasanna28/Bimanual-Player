@@ -2,6 +2,7 @@
   <arg name="output_dir" default="$(env HOME)/.ros/trajectories"/>
   <arg name="output_basename" default="single_arm"/>
   <arg name="joint_states_topic" default="/joint_states"/>
+  <arg name="controller_manager_ns" default="panda1"/>
 
   <node pkg="fr3_trajectory_recorder"
         type="single_arm_recorder.py"
@@ -10,6 +11,11 @@
     <param name="output_dir" value="$(arg output_dir)"/>
     <param name="output_basename" value="$(arg output_basename)"/>
     <param name="joint_states_topic" value="$(arg joint_states_topic)"/>
+    <param name="controller_manager_ns" value="$(arg controller_manager_ns)"/>
+    <rosparam param="start_controllers">
+      - joint_impedance_example_controller
+    </rosparam>
+    <rosparam param="stop_controllers">[]</rosparam>
     <rosparam param="joint_names">
       - panda1_joint1
       - panda1_joint2

@@ -16,6 +16,10 @@ gravity-compensation controller(s) in `franka_ros` before recording.
 roslaunch fr3_trajectory_recorder single_arm_recorder.launch
 ```
 
+By default this launch attempts to start the `joint_impedance_example_controller`
+under `/panda1/controller_manager`. Update the launch file if your controller
+name or namespace differs.
+
 You'll be prompted to type `yes` in the terminal to start recording.
 
 Output files:
