@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>fr3_trajectory_recorder</name>
+  <version>0.1.0</version>
+  <description>Record single-arm or bimanual FR3 joint trajectories during kinesthetic teaching.</description>
+  <maintainer email="user@example.com">User</maintainer>
+  <license>BSD-3-Clause</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>controller_manager_msgs</depend>
+</package>

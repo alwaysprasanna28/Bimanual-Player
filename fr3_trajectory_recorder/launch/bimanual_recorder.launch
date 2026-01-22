@@ -1,0 +1,32 @@
+<launch>
+  <arg name="output_dir" default="$(env HOME)/.ros/trajectories"/>
+  <arg name="output_basename" default="bimanual"/>
+  <arg name="joint_states_topic" default="/joint_states"/>
+
+  <node pkg="fr3_trajectory_recorder"
+        type="bimanual_recorder.py"
+        name="bimanual_trajectory_recorder"
+        output="screen">
+    <param name="output_dir" value="$(arg output_dir)"/>
+    <param name="output_basename" value="$(arg output_basename)"/>
+    <param name="joint_states_topic" value="$(arg joint_states_topic)"/>
+    <rosparam param="left_joint_names">
+      - panda1_joint1
+      - panda1_joint2
+      - panda1_joint3
+      - panda1_joint4
+      - panda1_joint5
+      - panda1_joint6
+      - panda1_joint7
+    </rosparam>
+    <rosparam param="right_joint_names">
+      - panda2_joint1
+      - panda2_joint2
+      - panda2_joint3
+      - panda2_joint4
+      - panda2_joint5
+      - panda2_joint6
+      - panda2_joint7
+    </rosparam>
+  </node>
+</launch>
